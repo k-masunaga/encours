@@ -1,26 +1,56 @@
-# README
+## 機能
+- 投稿機能
+- ログイン機能
+- 分析機能
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+# DBテーブル構成
 
-* Ruby version
+ ## usersテーブル
 
-* System dependencies
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, unique: true|
+|email|string|null: false, unique: true|
+|password|string|null: false|
+|prefecture|integer| |
+|city|string| |
+|sex|integer| |
+|birthday|date| |
 
-* Configuration
 
-* Database creation
+### Association
+- has_many :spendings
+- has_many :incomes
+- belongs_to :job
 
-* Database initialization
+ ## spendingsテーブル
 
-* How to run the test suite
+|Column|Type|Options|
+|------|----|-------|
+|item_name|string|null: false|
+|price|integer|null: false|
+|date|date|null: false|
+|memo|string| |
 
-* Services (job queues, cache servers, search engines, etc.)
+### Association
+- belongs_to :user
 
-* Deployment instructions
+ ## incomesテーブル
 
-* ...
+|Column|Type|Options|
+|------|----|-------|
+|price|integer|null: false|
+|date|date|null: false|
+|memo|string| |
 
-sample
+### Association
+- belongs_to :user
+
+ ## jobsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+
+### Association
+- has_many :users
