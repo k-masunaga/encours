@@ -1,0 +1,38 @@
+.user-body
+  .user-body__header
+    .user-body__header__title
+      Encours app
+    .user-body__header__input
+      入力する
+    .user-body__header__background
+      履歴
+    .user-body__header__analysis
+      分析
+    .user-body__header__config
+      設定
+    .user-body__header__blank
+      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
+  .user-body__main
+    .user-body__main__left
+      .user-body__main__left__info
+        更新情報
+    .user-body__main__center
+      .user-body__main__center__picture
+        .user-body__main__center__picture__mypage
+          = current_user.name + "さんのマイページ"
+        .user-body__main__center__picture__data
+          .user-body__main__center__picture__times
+            記録回数
+          .user-body__main__center__picture__days
+            記録日数
+          .user-body__main__center__picture__serial
+            連続記録
+      .user-body__main__situation
+        今月の状況
+    .user-body__main__right
+      .user-body__main__right__input
+        かんたん入力
+      .user-body__main__recent
+        最近の入力
+  .user-body__footer
+    Encours App
