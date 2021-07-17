@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2021_07_10_045149) do
     t.integer "price", null: false
     t.date "date", null: false
     t.string "memo"
+    t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -30,6 +31,7 @@ ActiveRecord::Schema.define(version: 2021_07_10_045149) do
     t.integer "price", null: false
     t.date "date", null: false
     t.string "memo"
+    t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

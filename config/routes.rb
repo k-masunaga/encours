@@ -8,4 +8,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :inputs, only: [:show, :get]
+
+  resources :spendings, only: [:new, :create]
+
 end
