@@ -1,0 +1,66 @@
+.input-body {
+  height: 100%;
+  width: 100%;
+  background-color: antiquewhite;
+  &__main {
+    height: 1000px;
+    width: 100%;
+    background-color: rgb(165, 167, 177);
+    display: flex;
+    // justify-content: space-between;
+    &__left {
+      height: 100%;
+      width: 70%;
+      &__blank {
+        height: 50px;
+      }
+      &__change {
+        height: 250px;
+        &__input {
+          height: 250px;
+          margin: 20px;
+          border-radius: 5px;
+          background-color:white;
+          &__form {
+            height: 230px;
+            margin-left: 20px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            &__item-name {  
+              text-align: center;
+              float: left;
+            }
+            &__price {
+              text-align: center;
+              float: left;
+            }
+            &__memo {
+              text-align: center;
+              float: left;
+            }
+            &__date {
+              margin-top: 70px;
+              text-align: center;
+              // align-items: center;
+            }
+            &__submit {
+              text-align: center;
+              &__btn {
+                margin-top: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+    &__right {
+      height: 100%;
+      width: 30%;
+      background-color: blue;
+      &__calender {
+        height: 200px;
+      }
+    }
+  }
+}
