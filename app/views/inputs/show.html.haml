@@ -6,12 +6,17 @@
       .input-body__main__left__blank
       .input-body__main__left__switch
         .input-body__main__left__switch__spending
-          支出
+          #tabcontrol
+            %a{href: "#tabpage1"} タブ1
+            %a{href: "#tabpage2"} タブ2
+          #tabbody
+            #tabpage1 …… タブ1の中身 ……
+            #tabpage2 …… タブ2の中身 ……
         .input-body__main__left__switch__income
           収入
       .input-body__main__left__change
         .input-body__main__left__change__input
-          %p 家計簿を入力
+          家計簿を入力
           .input-body__main__left__change__input__form
             = form_with model: @spending, url: spendings_path, class: :form, local: true do |f|
               .input-body__main__left__change__input__form__item-name
