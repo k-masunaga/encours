@@ -6,48 +6,33 @@
       .input-body__main__left__blank
       .input-body__main__left__switch
         .input-body__main__left__switch__spending
-          = form_with model: @spending, url: spendings_path, class: :form, local: true do |f|
-            #tabcontrol
-              %a{href: "#tabpage1"} 支出
-              %a{href: "#tabpage2"} 収入
-            #tabbody
-              #tabpage1
-                %ul 家計簿を入力
+          #tabcontrol
+            %a{href: "#tabpage1"} 支出
+            %a{href: "#tabpage2"} 収入
+          #tabbody
+            #tabpage1
+              %ul 家計簿を入力
+              %br/
+              = form_with model: @spending, url: spendings_path, class: :form, local: true do |f|
+                = f.text_field :item_name, placeholder: "品目名"
+                = f.text_field :price, placeholder: "金額(半角数字のみ有効)"
+                = f.text_field :memo, placeholder: "メモ"
                 %br/
-                %a= f.text_field :item_name, placeholder: "品目名"
-                %a= f.text_field :price, placeholder: "金額(半角数字のみ有効)"
-                %a= f.text_field :memo, placeholder: "メモ"
-                %p= f.date_select :date, :use_month_numbers => true
+                = f.date_field :date, :use_month_numbers => true
+                %br/
+                %br/
+                = f.submit '入力する'
+            #tabpage2
+              %ul 家計簿を入力
+              %br/
+              = form_with model: @income, url: incomes_path, class: :form, local: true do |f|
+                = f.text_field :price, placeholder: "金額(半角数字のみ有効)"
+                = f.text_field :memo, placeholder: "メモ"
+                %br/
+                = f.date_field :date, :use_month_numbers => true
+                %br/
                 %br/
                 %p= f.submit '入力する'
-
-              #tabpage2 …… タブ2の中身 …… 
-          -# .input-body__main__left__switch__income
-          -#   収入
-      -# .input-body__main__left__change
-      -#   .input-body__main__left__change__input
-      -#     家計簿を入力
-      -#     .input-body__main__left__change__input__form
-      -#       = form_with model: @spending, url: spendings_path, class: :form, local: true do |f|
-      -#         .input-body__main__left__change__input__form__item-name
-      -#           品目名
-      -#           .input-body__main__left__change__input__form__item-name__insert
-      -#             = f.text_field :item_name
-      -#         .input-body__main__left__change__input__form__price
-      -#           金額
-      -#           .input-body__main__left__change__input__form__price__insert
-      -#             = f.text_field :price
-      -#         .input-body__main__left__change__input__form__memo
-      -#           メモ
-      -#           .input-body__main__left__change__input__form__memo__insert
-      -#             = f.text_field :memo
-      -#         .input-body__main__left__change__input__form__date
-      -#           日付
-      -#           .input-body__main__left__change__input__form__date__insert
-      -#             = f.date_select :date, :use_month_numbers => true
-      -#         .input-body__main__left__change__input__form__submit
-      -#           .input-body__main__left__change__input__form__submit__btn
-      -#             = f.submit '入力する'
     .input-body__main__right
       .input-body__main__right__calender
         カレンダー

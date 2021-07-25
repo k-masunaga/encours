@@ -14,9 +14,8 @@
       }
       &__switch {
         height: 50px;
-        width: 95%;
+        width: 90%;
         margin-left: 20px;
-        // line-height: 50px;
         font-size: 20px;
         text-align: center;
         display: flex;
@@ -98,6 +97,8 @@
 }
 #tabbody div {
   height: 200px;
+  width: 100%;
+  border-radius: 5px;
   border: 1px solid black; /* 枠線：黒色の実線を1pxの太さで引く */
   margin-top: -1px;        /* 上側にあるタブと1pxだけ重ねるために「-1px」を指定 */
   padding: 1em;            /* 内側の余白量 */
