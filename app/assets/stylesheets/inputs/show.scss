@@ -1,21 +1,37 @@
 .input-body {
   height: 100%;
   width: 100%;
-  background-color: antiquewhite;
   &__main {
     height: 1000px;
     width: 100%;
-    background-color: rgb(165, 167, 177);
+    background-color: rgb(203, 204, 212);
     display: flex;
-    // justify-content: space-between;
     &__left {
       height: 100%;
       width: 70%;
       &__blank {
         height: 50px;
       }
+      &__switch {
+        height: 50px;
+        width: 90%;
+        margin-left: 20px;
+        font-size: 20px;
+        text-align: center;
+        display: flex;
+        justify-content: space-evenly;
+        &__spending {
+          width: 100%;
+          border-radius: 5px;
+        }
+        // &__income {
+        //   width: 50%;
+        //   border-radius: 5px;
+        //   background-color: deepskyblue;
+        // }
+      }
       &__change {
-        height: 250px;
+        height: 100%;
         &__input {
           height: 250px;
           margin: 20px;
@@ -42,7 +58,6 @@
             &__date {
               margin-top: 70px;
               text-align: center;
-              // align-items: center;
             }
             &__submit {
               text-align: center;
@@ -64,3 +79,32 @@
     }
   }
 }
+#tabcontrol a {
+  display: inline-block;            /* インラインブロック化 */
+  border-width: 1px 1px 0px 1px;    /* 下以外の枠線を引く */
+  border-style: solid;              /* 枠線の種類：実線 */
+  border-color: black;              /* 枠線の色：黒色 */
+  border-radius: 0.75em 0.75em 0 0; /* 枠線の左上角と右上角だけを丸く */
+  padding: 0.75em 1em;              /* 内側の余白 */
+  text-decoration: none;            /* リンクの下線を消す */
+  color: black;                     /* 文字色：黒色 */
+  background-color: white;          /* 背景色：白色 */
+  font-weight: bold;                /* 太字 */
+  position: relative;               /* JavaScriptでz-indexを調整するために必要 */
+}
+#tabcontrol a:hover {
+  text-decoration: underline;       /* 文字に下線を引く */
+}
+#tabbody div {
+  height: 200px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid black; /* 枠線：黒色の実線を1pxの太さで引く */
+  margin-top: -1px;        /* 上側にあるタブと1pxだけ重ねるために「-1px」を指定 */
+  padding: 1em;            /* 内側の余白量 */
+  background-color: white; /* 背景色：白色 */
+  position: relative;      /* z-indexを調整するために必要 */
+  z-index: 0;              /* 重なり順序を「最も背面」にするため */
+}
+#tabcontrol a:nth-child(1), #tabbody div:nth-child(1) { background-color: #ffffdd; }/* 1つ目のタブとその中身用の配色 */
+#tabcontrol a:nth-child(2), #tabbody div:nth-child(2) { background-color: #ddffdd; }/* 2つ目のタブとその中身用の配色 */

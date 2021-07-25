@@ -12,4 +12,6 @@ Rails.application.routes.draw do
 
   resources :spendings, only: [:new, :create]
 
+  resources :incomes, only: [:new, :create]
+  
 end
