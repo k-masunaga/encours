@@ -14,23 +14,22 @@
       }
       &__switch {
         height: 50px;
-        width: 50%;
-        margin-left: 50px;
-        line-height: 50px;
+        width: 95%;
+        margin-left: 20px;
+        // line-height: 50px;
         font-size: 20px;
         text-align: center;
         display: flex;
         justify-content: space-evenly;
         &__spending {
-          width: 50%;
+          width: 100%;
           border-radius: 5px;
-          background-color: yellow;
         }
-        &__income {
-          width: 50%;
-          border-radius: 5px;
-          background-color: deepskyblue;
-        }
+        // &__income {
+        //   width: 50%;
+        //   border-radius: 5px;
+        //   background-color: deepskyblue;
+        // }
       }
       &__change {
         height: 100%;
@@ -98,6 +97,7 @@
   text-decoration: underline;       /* 文字に下線を引く */
 }
 #tabbody div {
+  height: 200px;
   border: 1px solid black; /* 枠線：黒色の実線を1pxの太さで引く */
   margin-top: -1px;        /* 上側にあるタブと1pxだけ重ねるために「-1px」を指定 */
   padding: 1em;            /* 内側の余白量 */
