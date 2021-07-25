@@ -1,21 +1,39 @@
 .input-body {
   height: 100%;
   width: 100%;
-  background-color: antiquewhite;
   &__main {
     height: 1000px;
     width: 100%;
-    background-color: rgb(165, 167, 177);
+    background-color: rgb(203, 204, 212);
     display: flex;
-    // justify-content: space-between;
     &__left {
       height: 100%;
       width: 70%;
       &__blank {
         height: 50px;
       }
+      &__switch {
+        height: 50px;
+        width: 50%;
+        margin-left: 50px;
+        line-height: 50px;
+        font-size: 20px;
+        text-align: center;
+        display: flex;
+        justify-content: space-evenly;
+        &__spending {
+          width: 50%;
+          border-radius: 5px;
+          background-color: yellow;
+        }
+        &__income {
+          width: 50%;
+          border-radius: 5px;
+          background-color: deepskyblue;
+        }
+      }
       &__change {
-        height: 250px;
+        height: 100%;
         &__input {
           height: 250px;
           margin: 20px;

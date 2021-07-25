@@ -19,11 +19,9 @@
     width: 100%;
     display: flex;
     justify-content: space-evenly;
-    // background-color: aquamarine;
     &__left {
       height: 100%;
       width: 20%;
-      // background-color: cyan;
     }
     &__center {
       height: 100%;
@@ -58,7 +56,6 @@
     &__right {
       height: 100%;
       width: 25%;
-      #background-color: lightskyblue;
       &__input {
         height: 300px;
         width: 100%;
@@ -77,4 +74,8 @@
     text-align: center;
     background-color: white;
   }
+}
+.a {
+  color: aquamarine;
+  text-decoration: none;
 }

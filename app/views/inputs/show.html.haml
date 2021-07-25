@@ -1,13 +1,17 @@
 .input-body
-  .inpuy-body__header
+  .input-body__header
     = render "users/header"
   .input-body__main
     .input-body__main__left
       .input-body__main__left__blank
+      .input-body__main__left__switch
+        .input-body__main__left__switch__spending
+          支出
+        .input-body__main__left__switch__income
+          収入
       .input-body__main__left__change
-        支出　収入
         .input-body__main__left__change__input
-          家計簿を入力
+          %p 家計簿を入力
           .input-body__main__left__change__input__form
             = form_with model: @spending, url: spendings_path, class: :form, local: true do |f|
               .input-body__main__left__change__input__form__item-name
