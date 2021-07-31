@@ -1,17 +1,6 @@
 .user-body
   .user-body__header
-    .user-body__header__title
-      Encours app
-    .user-body__header__input
-      = link_to "入力する", input_path, method: :get, class: 'btn'
-    .user-body__header__background
-      履歴
-    .user-body__header__analysis
-      分析
-    .user-body__header__config
-      設定
-    .user-body__header__blank
-      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
+    = render "users/header"
   .user-body__main
     .user-body__main__left
       .user-body__main__left__info
