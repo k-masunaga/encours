@@ -4,6 +4,10 @@
   .history-body__main
     .history-body__main__blank
     .history-body__main__select
+      .history-body__main__select__spending
+        支出
+      .history-body__main__select__income
+        収入
     .history-body__main__field
       .history-body__main__field__spending
         .history-body__main__field__spending__title
@@ -21,12 +25,12 @@
           - @spendings.each do |spending|
             .history-body__main__field__spending__all__each
               .history-body__main__field__spending__all__each__date
-                = spending.date
+                = spending.date.strftime("%m月%d日")
               .history-body__main__field__spending__all__each__category
               .history-body__main__field__spending__all__each__item-name
                 = spending.item_name
               .history-body__main__field__spending__all__each__price
-                = "#{spending.price}" + "円"
+                = number_to_currency(spending.price, unit: "￥", strip_insignificant_zeros: true)
               .history-body__main__field__spending__all__each__memo
                 = spending.memo
       .history-body__main__field__income
@@ -43,10 +47,10 @@
           - @incomes.each do |income|
             .history-body__main__field__income__all__each
               .history-body__main__field__income__all__each__date
-                = income.date
+                = income.date.strftime("%m月%d日")
               .history-body__main__field__income__all__each__category
               .history-body__main__field__income__all__each__price
-                = "#{income.price}" + "円"
+                = number_to_currency(income.price, unit: "￥", strip_insignificant_zeros: true)
               .history-body__main__field__income__all__each__memo
                 = income.memo
     .history-body__main__total
