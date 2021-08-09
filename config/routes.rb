@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   resources :spendings, only: [:new, :create]
 
   resources :incomes, only: [:new, :create]
-  
+
+  resources :histories, only: [:show, :get]
 end

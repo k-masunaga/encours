@@ -1,0 +1,58 @@
+.history-body
+  .history-body__header
+    = render "users/header"
+  .history-body__main
+    .history-body__main__blank
+    .history-body__main__select
+      .history-body__main__select__spending
+        支出
+      .history-body__main__select__income
+        収入
+    .history-body__main__field
+      .history-body__main__field__spending
+        .history-body__main__field__spending__title
+          .history-body__main__field__spending__title__date
+            日付
+          .history-body__main__field__spending__title__category
+            カテゴリー
+          .history-body__main__field__spending__title__item-name
+            品目名
+          .history-body__main__field__spending__title__price
+            金額
+          .history-body__main__field__spending__title__memo
+            メモ
+        .history-body__main__field__spending__all
+          - @spendings.each do |spending|
+            .history-body__main__field__spending__all__each
+              .history-body__main__field__spending__all__each__date
+                = spending.date.strftime("%m月%d日")
+              .history-body__main__field__spending__all__each__category
+              .history-body__main__field__spending__all__each__item-name
+                = spending.item_name
+              .history-body__main__field__spending__all__each__price
+                = number_to_currency(spending.price, unit: "￥", strip_insignificant_zeros: true)
+              .history-body__main__field__spending__all__each__memo
+                = spending.memo
+      .history-body__main__field__income
+        .history-body__main__field__income__title
+          .history-body__main__field__income__title__date
+            日付
+          .history-body__main__field__income__title__category
+            カテゴリー
+          .history-body__main__field__income__title__price
+            金額
+          .history-body__main__field__income__title__memo
+            メモ
+        .history-body__main__field__income__all
+          - @incomes.each do |income|
+            .history-body__main__field__income__all__each
+              .history-body__main__field__income__all__each__date
+                = income.date.strftime("%m月%d日")
+              .history-body__main__field__income__all__each__category
+              .history-body__main__field__income__all__each__price
+                = number_to_currency(income.price, unit: "￥", strip_insignificant_zeros: true)
+              .history-body__main__field__income__all__each__memo
+                = income.memo
+    .history-body__main__total
+  .history-body__footer
+    = render "users/footer"

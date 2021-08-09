@@ -4,7 +4,7 @@
   .user-body__header__input
     = link_to "入力する", input_path, method: :get, class: 'btn'
   .user-body__header__background
-    履歴
+    = link_to "履歴", history_path, method: :get, class: 'btn'
   .user-body__header__analysis
     分析
   .user-body__header__config
