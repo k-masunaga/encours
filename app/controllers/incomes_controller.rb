@@ -10,6 +10,6 @@ class IncomesController < ApplicationController
 
   private
   def post_params
-    params.permit(:price, :date, :memo).merge(user_id: current_user.id)
+    params.permit(:price, :income_categories_id, :date, :memo).merge(user_id: current_user.id)
   end
 end

@@ -10,6 +10,6 @@ class SpendingsController < ApplicationController
 
   private
   def post_params
-    params.permit(:item_name, :price, :date, :memo).merge(user_id: current_user.id)
+    params.permit(:item_name, :spending_categories_id, :price, :date, :memo).merge(user_id: current_user.id)
   end
 end
