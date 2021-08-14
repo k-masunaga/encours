@@ -25,7 +25,7 @@
           - @spendings.each do |spending|
             .history-body__main__field__spending__all__each
               .history-body__main__field__spending__all__each__date
-                = spending.date.strftime("%m月%d日")
+                = spending.date.strftime("%-m月%-d日(#{@dw[spending.date.wday]})")
               .history-body__main__field__spending__all__each__category
                 = spending.spending_category.name
               .history-body__main__field__spending__all__each__item-name
@@ -48,7 +48,7 @@
           - @incomes.each do |income|
             .history-body__main__field__income__all__each
               .history-body__main__field__income__all__each__date
-                = income.date.strftime("%m月%d日")
+                = income.date.strftime("%-m月%-d日(#{@dw[income.date.wday]})")
               .history-body__main__field__income__all__each__category
                 = income.income_category.name
               .history-body__main__field__income__all__each__price
@@ -56,5 +56,26 @@
               .history-body__main__field__income__all__each__memo
                 = income.memo
     .history-body__main__total
+      .history-body__main__total__blank
+      .history-body__main__total__field
+        .history-body__main__total__field__title
+          集計結果
+        .history-body__main__total__field__term
+          30日間
+        .history-body__main__total__field__income
+          .history-body__main__total__field__income__title
+            収入の合計
+          .history-body__main__total__field__income__sum
+            = @incomes.sum("price")
+        .history-body__main__total__field__spending
+          .history-body__main__total__field__spending__title
+            支出の合計
+          .history-body__main__total__field__spending__sum
+            = @spendings.sum("price")
+        .history-body__main__total__field__balance
+          .history-body__main__total__field__balance__title
+            総額
+          .history-body__main__total__field__balance__sum
+            = @incomes.sum("price") - @spendings.sum("price")
   .history-body__footer
     = render "users/footer"
