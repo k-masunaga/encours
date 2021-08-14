@@ -27,7 +27,7 @@
               .history-body__main__field__spending__all__each__date
                 = spending.date.strftime("%m月%d日")
               .history-body__main__field__spending__all__each__category
-                = spending.spending_categories_id
+                = spending.spending_category.name
               .history-body__main__field__spending__all__each__item-name
                 = spending.item_name
               .history-body__main__field__spending__all__each__price
@@ -50,7 +50,7 @@
               .history-body__main__field__income__all__each__date
                 = income.date.strftime("%m月%d日")
               .history-body__main__field__income__all__each__category
-                = income.income_categories_id
+                = income.income_category.name
               .history-body__main__field__income__all__each__price
                 = number_to_currency(income.price, unit: "￥", strip_insignificant_zeros: true)
               .history-body__main__field__income__all__each__memo

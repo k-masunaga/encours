@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2021_08_09_081045) do
     t.date "date", null: false
     t.string "memo"
     t.integer "user_id", null: false
-    t.integer "income_categories_id", null: false
+    t.integer "income_category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2021_08_09_081045) do
     t.date "date", null: false
     t.string "memo"
     t.integer "user_id", null: false
-    t.integer "spending_categories_id", null: false
+    t.integer "spending_category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
