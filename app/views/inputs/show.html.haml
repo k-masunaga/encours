@@ -18,6 +18,7 @@
                 = f.text_field :price, placeholder: "金額(半角数字のみ有効)"
                 = f.text_field :memo, placeholder: "メモ"
                 %br/
+                = f.collection_select :spending_category_id, SpendingCategory.all, :id, :name,{prompt: "カテゴリの選択 ※必須"}
                 = f.date_field :date, :use_month_numbers => true
                 %br/
                 %br/
@@ -29,6 +30,7 @@
                 = f.text_field :price, placeholder: "金額(半角数字のみ有効)"
                 = f.text_field :memo, placeholder: "メモ"
                 %br/
+                = f.collection_select :income_category_id, IncomeCategory.all, :id, :name,{prompt: "カテゴリの選択 ※必須"}
                 = f.date_field :date, :use_month_numbers => true
                 %br/
                 %br/

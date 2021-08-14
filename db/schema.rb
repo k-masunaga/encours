@@ -10,18 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_10_045149) do
+ActiveRecord::Schema.define(version: 2021_08_09_081045) do
+
+  create_table "income_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "incomes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "price", null: false
     t.date "date", null: false
     t.string "memo"
     t.integer "user_id", null: false
+    t.integer "income_category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "jobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "spending_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -32,6 +45,7 @@ ActiveRecord::Schema.define(version: 2021_07_10_045149) do
     t.date "date", null: false
     t.string "memo"
     t.integer "user_id", null: false
+    t.integer "spending_category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

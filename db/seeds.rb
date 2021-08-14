@@ -1,7 +1,20 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+IncomeCategory.create(name: "給与所得")
+IncomeCategory.create(name: "立替金返済")
+IncomeCategory.create(name: "賞与")
+IncomeCategory.create(name: "臨時収入")
+IncomeCategory.create(name: "事業所得")
+IncomeCategory.create(name: "その他")
+
+SpendingCategory.create([{name: "食費_食料品"}, {name: "食費_朝ごはん"}, {name: "食費_昼ごはん"}, {name: "食費_夜ごはん"}, {name: "食費_カフェ"}, {name: "食費_飲み会"}, {name: "食費_その他"}])
+SpendingCategory.create([{name: "日曜雑貨_消耗品"}, {name: "日曜雑貨_子ども関連"}, {name: "日曜雑貨_ペット関連"}, {name: "日曜雑貨_タバコ"}, {name: "日曜雑貨_その他"}])
+SpendingCategory.create([{name: "交通_電車"}, {name: "交通_タクシー"}, {name: "交通_バス"}, {name: "交通_飛行機"}, {name: "交通_その他"}])
+SpendingCategory.create([{name: "通信_携帯電話"}, {name: "通信_固定電話"}, {name: "通信_インターネット関連"}, {name: "通信_放送サービス料金"}, {name: "通信_宅配便"}, {name: "通信_切手・はがき"}, {name: "通信_その他"}])
+SpendingCategory.create([{name: "生活_水道料金"}, {name: "生活_電気料金"}, {name: "生活_ガス料金"}, {name: "生活_家賃"}, {name: "生活_住宅ローン"}, {name: "生活_家具"}, {name: "生活_家電"}, {name: "生活_リフォーム"}, {name: "生活_住宅保険"}, {name: "生活_その他"}])
+SpendingCategory.create([{name: "交際費/エンタメ_プレゼント"}, {name: "交際費/エンタメ_ご祝儀・香典"}, {name: "交際費/エンタメ_レジャー"}, {name: "交際費/エンタメ_イベント"}, {name: "交際費/エンタメ_映画・動画"}, {name: "交際費/エンタメ_音楽"}, {name: "交際費/エンタメ_漫画"}, {name: "交際費/エンタメ_書籍"}, {name: "交際費/エンタメ_ゲーム"}, {name: "交際費/エンタメ_その他"}])
+SpendingCategory.create([{name: "教育/教養_習い事"}, {name: "教育/教養_新聞"}, {name: "教育/教養_参考書"}, {name: "教育/教養_受験料"}, {name: "教育/教養_学費"}, {name: "教育/教養_学資保険"}, {name: "教育/教養_塾"}, {name: "教育/教養_その他"}])
+SpendingCategory.create([{name: "医療/保険_病院代"}, {name: "医療/保険_薬代"}, {name: "医療/保険_生命保険"}, {name: "医療/保険_医療保険"}, {name: "医療/保険_その他"}])
+SpendingCategory.create([{name: "美容/衣服_洋服"}, {name: "美容/衣服_アクセサリー・小物"}, {name: "美容/衣服_下着"}, {name: "美容/衣服_ジム・健康"}, {name: "美容/衣服_美容院"}, {name: "美容/衣服_コスメ"}, {name: "美容/衣服_エステ・ネイル"}, {name: "美容/衣服_クリーニング"}, {name: "美容/衣服_その他"}])
+SpendingCategory.create([{name: "車_ガソリン"}, {name: "車_駐車場"}, {name: "車_自動車保険"}, {name: "車_自動税"}, {name: "車_自動車ローン"}, {name: "車_免許教習"}, {name: "車_高速料金"}, {name: "車_その他"}])
+SpendingCategory.create([{name: "税金_年金"}, {name: "税金_所得税"}, {name: "税金_消費税"}, {name: "税金_住民税"}, {name: "税金_個人事業税"}, {name: "税金_その他"}])
+SpendingCategory.create([{name: "大型出費_旅行"}, {name: "大型出費_住宅"}, {name: "大型出費_自動車"}, {name: "大型出費_バイク"}, {name: "大型出費_結婚"}, {name: "大型出費_出産"}, {name: "大型出費_介護"}, {name: "大型出費_家具"}, {name: "大型出費_家電"}, {name: "大型出費_その他"}])
+SpendingCategory.create([{name: "その他_仕送り"}, {name: "その他_お小遣い"}, {name: "その他_用途不明金"}, {name: "その他_立替金"}, {name: "その他_現金の引出し"}, {name: "その他_カードの引き落とし"}, {name: "その他_電子マネーにチャージ"}, {name: "その他_借金返済"}, {name: "その他_未分類"}, {name: "その他_その他"}])
