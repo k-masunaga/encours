@@ -35,7 +35,6 @@ ActiveRecord::Schema.define(version: 2021_08_09_081045) do
 
   create_table "spending_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
-    t.string "ancestry"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
