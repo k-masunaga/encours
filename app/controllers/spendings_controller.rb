@@ -5,7 +5,7 @@ class SpendingsController < ApplicationController
 
   def create
     Spending.create(post_params)
-    redirect_to user_path(current_user.id)
+    redirect_to input_path(current_user.id)
   end
 
   private
