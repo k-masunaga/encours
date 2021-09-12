@@ -67,9 +67,43 @@
     &__right {
       height: 100%;
       width: 30%;
-      background-color: blue;
+      background-color:white;
       &__calender {
         height: 200px;
+      }
+      &__recent {
+        height: 100%;
+        &__all {
+          &__each {
+            &__sdg {
+              height: 80px;
+              width: 90%;
+              padding: 10px;
+              border-radius: 5px;
+              position: relative;
+              margin: auto;
+              background-color: #ffffdd;
+              &__price {
+                position: absolute;
+                margin-right: 30px;
+                margin-bottom: 30px;
+              }
+            }
+            &__icm {
+              height: 80px;
+              width: 90%;
+              padding: 10px;
+              border-radius: 5px;
+              margin: auto;
+              background-color: #ddffdd;
+              &__price {
+                position: absolute;
+                margin-right: 30px;
+                margin-bottom: 30px;
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -91,7 +125,7 @@
   text-decoration: underline;       /* 文字に下線を引く */
 }
 #tabbody div {
-  height: 200px;
+  height: 250px;
   width: 100%;
   border-radius: 5px;
   border: 1px solid black; /* 枠線：黒色の実線を1pxの太さで引く */

@@ -14,11 +14,12 @@
               %ul 家計簿を入力
               %br/
               = form_with model: @spending, url: spendings_path, class: :form, local: true do |f|
+                = f.collection_select :spending_category_id, SpendingCategory.all, :id, :name,{prompt: "カテゴリの選択 ※必須"}
+                %br/
                 = f.text_field :item_name, placeholder: "品目名"
                 = f.text_field :price, placeholder: "金額(半角数字のみ有効)"
                 = f.text_field :memo, placeholder: "メモ"
                 %br/
-                = f.collection_select :spending_category_id, SpendingCategory.all, :id, :name,{prompt: "カテゴリの選択 ※必須"}
                 = f.date_field :date, :use_month_numbers => true
                 %br/
                 %br/
@@ -27,10 +28,11 @@
               %ul 家計簿を入力
               %br/
               = form_with model: @income, url: incomes_path, class: :form, local: true do |f|
+                = f.collection_select :income_category_id, IncomeCategory.all, :id, :name,{prompt: "カテゴリの選択 ※必須"}
+                %br/
                 = f.text_field :price, placeholder: "金額(半角数字のみ有効)"
                 = f.text_field :memo, placeholder: "メモ"
                 %br/
-                = f.collection_select :income_category_id, IncomeCategory.all, :id, :name,{prompt: "カテゴリの選択 ※必須"}
                 = f.date_field :date, :use_month_numbers => true
                 %br/
                 %br/
@@ -40,5 +42,24 @@
         カレンダー
       .input-body__main__right__recent
         最近の入力
+        .input-body__main__right__recent__all
+          - @samples.each do |sample|
+            .input-body__main__right__recent__all__each
+              - if sample.class == Spending
+                .input-body__main__right__recent__all__each__sdg
+                  .input-body__main__right__recent__all__each__sdg__date
+                    = sample.date.strftime("%-m月%-d日(#{@dw[sample.date.wday]})")
+                  .input-body__main__right__recent__all__each__sdg__category
+                    = sample.spending_category.name
+                  .input-body__main__right__recent__all__each__sdg__price
+                    = number_to_currency(sample.price, unit: "￥", strip_insignificant_zeros: true)
+              - else
+                .input-body__main__right__recent__all__each__icm
+                  .input-body__main__right__recent__all__each__icm__date
+                    = sample.date.strftime("%-m月%-d日(#{@dw[sample.date.wday]})")
+                  .input-body__main__right__recent__all__each__icm__category
+                    = sample.income_category.name
+                  .input-body__main__right__recent__all__each__icm__price
+                    = number_to_currency(sample.price, unit: "￥", strip_insignificant_zeros: true)
   .input-body__footer
     = render "users/footer"

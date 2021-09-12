@@ -3,6 +3,10 @@
     = render "users/header"
   .history-body__main
     .history-body__main__blank
+      -# = search_form_for @q, url: search_histories_path do |f|
+      -#   = f.label :item_name, '品目名'
+      -#   = f.search_field :item_name
+      -#   = f.submit '検索'
     .history-body__main__select
       .history-body__main__select__spending
         支出
@@ -22,6 +26,30 @@
           .history-body__main__field__spending__title__memo
             メモ
         .history-body__main__field__spending__all
+          -# - @sample.each do |sample|
+          -#   .history-body__main__field__spending__all__each
+          -#     - if sample.class == "Spending"
+          -#       .history-body__main__field__spending__all__each__date
+          -#         = sample.date.strftime("%-m月%-d日(#{@dw[spending.date.wday]})")
+          -#       .history-body__main__field__spending__all__each__category
+          -#         = sample.spending_category.name
+          -#       .history-body__main__field__spending__all__each__item-name
+          -#         = sample.item_name
+          -#       .history-body__main__field__spending__all__each__price
+          -#         = number_to_currency(spending.price, unit: "￥", strip_insignificant_zeros: true)
+          -#       .history-body__main__field__spending__all__each__memo
+          -#         = sample.memo
+          -#     - else
+                -# .history-body__main__field__spending__all__each__date
+                -#   = sample.date.strftime("%-m月%-d日(#{@dw[incomes.date.wday]})")
+                -# .history-body__main__field__spending__all__each__category
+                -#   = sample.income_category.name
+                -# .history-body__main__field__spending__all__each__item-name
+                -#   = sample.item_name
+                -# .history-body__main__field__spending__all__each__price
+                -#   = number_to_currency(spending.price, unit: "￥", strip_insignificant_zeros: true)
+                -# .history-body__main__field__spending__all__each__memo
+                -#   = sample.memo
           - @spendings.each do |spending|
             .history-body__main__field__spending__all__each
               .history-body__main__field__spending__all__each__date
