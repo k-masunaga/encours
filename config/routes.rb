@@ -14,9 +14,6 @@ Rails.application.routes.draw do
 
   resources :incomes, only: [:new, :create]
 
-  resources :histories, only: [:show, :get] do
-    collection do
-      get 'search'
-    end
-  end
+  resources :histories, only: [:show, :get]
+
 end

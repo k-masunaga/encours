@@ -181,6 +181,7 @@
         &__title {
           height: 32px;
           line-height: 32px;
+          padding-left: 20px;
           background-color: rgb(203, 204, 212);
           border-bottom:1px solid gray;
         }
@@ -192,6 +193,8 @@
         &__income {
           height: 30px;
           line-height: 30px;
+          padding-left: 30px;
+          padding-right: 30px;
           display: flex;
           justify-content: space-between;
           border-bottom:1px solid gray;
@@ -199,6 +202,8 @@
         &__spending {
           height: 30px;
           line-height: 30px;
+          padding-left: 30px;
+          padding-right: 30px;
           display: flex;
           justify-content: space-between;
           border-bottom:1px solid gray;
@@ -206,6 +211,8 @@
         &__balance {
           height: 30px;
           line-height: 30px;
+          padding-left: 30px;
+          padding-right: 30px;
           display: flex;
           justify-content: space-between;
         }
