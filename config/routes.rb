@@ -16,4 +16,6 @@ Rails.application.routes.draw do
 
   resources :histories, only: [:show, :get]
 
+  resources :analyses, only: [:show, :get]
+
 end
