@@ -1,4 +1,4 @@
-.analysis-body {
+.analysis-search-body {
   height: 100%;
   width: 100%;
   &__main {
@@ -9,13 +9,9 @@
     }
     &__search {
       height: 200px;
-      &__field {
-        height: 150px;
-        padding-top: 30px;
-        padding-left: 50px;
-        align-items: center;
-        border-bottom:1px solid gray;
-      }
+    }
+    &__heading {
+      text-align: center;
     }
     &__field {
       height: 300px;
@@ -69,59 +65,29 @@
         }
       }
       &__results {
-        z-index: 2;
         &__each {
-          &__sdg {
-            height: 30px;
-            line-height: 30px;
-            text-align: center;
-            // padding-left: 20px;
-            border-bottom:1px solid gray;
-            display: flex;
-            justify-content: space-evenly;
-            &__date {
-              width: 15%;
-            }
-            &__category {
-              width: 30%;
-            }
-            &__price {
-              padding-right: 15px;
-              text-align: right;
-              width: 15%;
-            }
-            &__item-name {
-              width: 20%;
-            }
-            &__memo {
-              width: 20%;
-            }
+          height: 30px;
+          line-height: 30px;
+          text-align: center;
+          border-bottom:1px solid gray;
+          display: flex;
+          justify-content: space-evenly;
+          &__date {
+            width: 15%;
           }
-          &__icm {
-            height: 30px;
-            line-height: 30px;
-            text-align: center;
-            // padding-left: 20px;
-            border-bottom:1px solid gray;
-            display: flex;
-            justify-content: space-evenly;
-            &__date {
-              width: 15%;
-            }
-            &__category {
-              width: 30%;
-            }
-            &__price {
-              padding-right: 15px;
-              text-align: right;
-              width: 15%;
-            }
-            &__item-name {
-              width: 20%;
-            }
-            &__memo {
-              width: 20%;
-            }
+          &__category {
+            width: 30%;
+          }
+          &__price {
+            padding-right: 15px;
+            text-align: right;
+            width: 15%;
+          }
+          &__item-name {
+            width: 20%;
+          }
+          &__memo {
+            width: 20%;
           }
         }
       }
