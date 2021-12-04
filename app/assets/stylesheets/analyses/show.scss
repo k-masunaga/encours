@@ -9,7 +9,14 @@
     }
     &__search {
       height: 200px;
-      background-color: rosybrown;
+      // background-color: rosybrown;
+      &__field {
+        height: 170px;
+        padding-top: 30px;
+        padding-left: 50px;
+        align-items: center;
+        border-bottom:1px solid gray;
+      }
     }
     &__field {
       height: 300px;
