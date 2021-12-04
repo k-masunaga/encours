@@ -1,0 +1,17 @@
+.analysis-body__main__search__field
+  = search_form_for @q, url: search_analyses_path do |f|
+    .analysis-body__main__search__field__item_name
+      = f.label :item_name, '品目名'
+      = f.search_field :item_name_cont
+    .analysis-body__main__search__field__category
+      = f.label :spending_category_id, 'カテゴリー'
+      = f.collection_check_boxes :spending_category_id_in, @spending_category, :id, :name
+    .analysis-body__main__search__field__category
+      = f.label :price, '金額'
+      = f.search_field :price_gteq
+      = f.search_field :price_lteq
+    .analysis-body__main__search__field__memo
+      = f.label :memo, 'メモ'
+      = f.search_field :memo_cont
+    .analysis-body__main__search__field__submit
+      = f.submit '検索'

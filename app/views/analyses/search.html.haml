@@ -1,0 +1,36 @@
+.analysis-search-body
+  .analysis-search-body__header
+    = render "users/header"
+  .analysis-search-body__main
+    .analysis-search-body__main__blank
+    .analysis-search-body__main__search
+      = render "analyses/search-zone"
+    .analysis-search-body__main__heading
+      検索結果
+    .analysis-search-body__main__field
+      .analysis-search-body__main__field__title
+        .analysis-search-body__main__field__title__date
+          日付
+        .analysis-search-body__main__field__title__category
+          カテゴリ
+        .analysis-search-body__main__field__title__price
+          金額
+        .analysis-search-body__main__field__title__item-name
+          品目名
+        .analysis-search-body__main__field__title__memo
+          メモ
+      .analysis-search-body__main__field__results
+        - @results.each do |spending|
+          .analysis-search-body__main__field__results__each
+            .analysis-search-body__main__field__results__each__date
+              = spending.date.strftime("%-m月%-d日(#{@dw[spending.date.wday]})")
+            .analysis-search-body__main__field__results__each__category
+              = spending.spending_category.name
+            .analysis-search-body__main__field__results__each__price
+              = number_to_currency(spending.price, unit: "￥", strip_insignificant_zeros: true)
+            .analysis-search-body__main__field__results__each__item-name
+              = spending.item_name
+            .analysis-search-body__main__field__results__each__memo
+              = spending.memo
+  .analysis-search-body__footer
+    = render "users/footer"
