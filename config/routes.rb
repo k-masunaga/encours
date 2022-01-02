@@ -10,9 +10,9 @@ Rails.application.routes.draw do
 
   resources :inputs, only: [:show, :get]
 
-  resources :spendings, only: [:new, :create]
+  resources :spendings, only: [:new, :create, :edit, :update, :destroy]
 
-  resources :incomes, only: [:new, :create]
+  resources :incomes, only: [:new, :create, :edit, :update, :destroy]
 
   resources :histories, only: [:show, :get]
 

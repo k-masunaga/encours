@@ -24,6 +24,10 @@
         .history-body__main__field__spending__all
           - @spendings.each do |spending|
             .history-body__main__field__spending__all__each
+              .history-body__main__field__spending__all__each__edit
+                = link_to "編", edit_spending_path(spending.id), class: 'btn'
+              .history-body__main__field__spending__all__each__destroy
+                = link_to "削", spending_path(spending.id), method: :delete, data: {confirm: "本当に削除しますか？"}, class: 'btn'
               .history-body__main__field__spending__all__each__date
                 = spending.date.strftime("%-m月%-d日(#{@dw[spending.date.wday]})")
               .history-body__main__field__spending__all__each__category
@@ -47,6 +51,10 @@
         .history-body__main__field__income__all
           - @incomes.each do |income|
             .history-body__main__field__income__all__each
+              .history-body__main__field__income__all__each__edit
+                = link_to "編", edit_income_path(income.id), class: 'btn'
+              .history-body__main__field__income__all__each__destroy
+                = link_to "削", income_path(income.id), method: :delete, data: {confirm: "本当に削除しますか？"}, class: 'btn'
               .history-body__main__field__income__all__each__date
                 = income.date.strftime("%-m月%-d日(#{@dw[income.date.wday]})")
               .history-body__main__field__income__all__each__category

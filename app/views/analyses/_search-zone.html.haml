@@ -1,5 +1,5 @@
 .analysis-body__main__search__field
-  = search_form_for @q, url: search_analyses_path do |f|
+  = search_form_for @q, url: search_analyses_path(current_user.id) do |f|
     .analysis-body__main__search__field__item_name
       = f.label :item_name, '品目名'
       = f.search_field :item_name_cont
