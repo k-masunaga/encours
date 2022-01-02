@@ -13,12 +13,17 @@ class SpendingsController < ApplicationController
   end
 
   def update
-    @spending = Spending.find(params[:id])
-    @spending.update(update_params)
+    spending = Spending.find(params[:id])
+    spending.update(update_params)
     redirect_to history_path(current_user.id)
   end
 
-  def delete
+  def destroy
+    spending = Spending.find(params[:id])
+    if spending.user_id == current_user.id
+      spending.destroy
+    end
+    redirect_to history_path(current_user.id)
   end
 
   private

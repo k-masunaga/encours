@@ -13,12 +13,17 @@ class IncomesController < ApplicationController
   end
 
   def update
-    @income = Income.find(params[:id])
-    @income.update(update_params)
+    income = Income.find(params[:id])
+    income.update(update_params)
     redirect_to history_path(current_user.id)
   end
 
-  def delete
+  def destroy
+    income = Income.find(params[:id])
+    if income.user_id == current_user.id
+      income.destroy
+    end
+    redirect_to history_path(current_user.id)
   end
 
   private
