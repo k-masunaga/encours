@@ -8,8 +8,25 @@ class IncomesController < ApplicationController
     redirect_to input_path(current_user.id)
   end
 
+  def edit
+    @income = Income.find(params[:id])
+  end
+
+  def update
+    @income = Income.find(params[:id])
+    @income.update(update_params)
+    redirect_to history_path(current_user.id)
+  end
+
+  def delete
+  end
+
   private
   def post_params
     params.permit(:price, :income_category_id, :date, :memo).merge(user_id: current_user.id)
+  end
+
+  def update_params
+    params.require(:income).permit(:price, :income_category_id, :date, :memo).merge(user_id: current_user.id)
   end
 end

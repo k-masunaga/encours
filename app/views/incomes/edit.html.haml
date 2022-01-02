@@ -1,0 +1,16 @@
+.income-body
+  .income-body__header
+    = render "users/header"
+  .income-body__title
+    収入の編集
+  .income-body__main
+    = form_with model: @income, url: income_path, class: :form, local: true do |f|
+      = f.collection_select :income_category_id, IncomeCategory.all, :id, :name,{prompt: "カテゴリの選択 ※必須"}
+      %br/
+      = f.text_field :price, placeholder: "金額(半角数字のみ有効)"
+      = f.text_field :memo, placeholder: "メモ"
+      %br/
+      = f.date_field :date, :use_month_numbers => true
+      %br/
+      %br/
+      %p= f.submit '入力する'

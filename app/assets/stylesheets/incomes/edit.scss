@@ -1,0 +1,23 @@
+.income-body {
+  &__title {
+    height: 50px;
+    width: 90%;
+    line-height: 50px;
+    text-align: center;
+    margin: auto;
+    font-size: 20px;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+    background-color: #ddffdd;
+  }
+  &__main {
+    height: 200px;
+    width: 90%;
+    text-align: center;
+    margin: auto;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+    border-bottom: 1px solid gray;
+    background-color: #ddffdd;
+  }
+}

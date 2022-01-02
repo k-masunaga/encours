@@ -13,7 +13,7 @@ class AnalysesController < ApplicationController
   end
 
   def search
-    @results = @q.result
+    @results = @q.result.where(user_id: current_user.id)
   end
 
   private

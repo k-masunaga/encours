@@ -28,7 +28,7 @@
       justify-content: space-evenly;
       &__spending {
         height: 400px;
-        width: 58%;
+        width: 53%;
         overflow-y: scroll;
         border:1px solid gray;
         background-color: #ffffdd;
@@ -54,12 +54,12 @@
           &__date {
             border-right:1px solid gray;
             border-bottom:1px solid gray;
-            width: 15%;
+            width: 20%;
           }
           &__category {
             border-right:1px solid gray;
             border-bottom:1px solid gray;
-            width: 30%;
+            width: 25%;
           }
           &__item-name {
             border-right:1px solid gray;
@@ -87,10 +87,10 @@
             display: flex;
             justify-content: left;
             &__date {
-              width: 15%;
+              width: 20%;
             }
             &__category {
-              width: 30%;
+              width: 25%;
             }
             &__item-name {
               width: 20%;
@@ -106,7 +106,7 @@
       }
       &__income {
         height: 400px;
-        width: 38%;
+        width: 43%;
         overflow-y: scroll;
         border:1px solid gray;
         background-color: #ddffdd;
