@@ -9,7 +9,6 @@ class AnalysesController < ApplicationController
 
     @total = spendings | incomes
     @total.sort!{ |spendings, incomes| incomes.date <=> spendings.date }
-
   end
 
   def search

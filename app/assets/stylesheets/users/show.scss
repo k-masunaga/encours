@@ -2,16 +2,30 @@
   height: 100%;
   width: 100%;
   background-color: antiquewhite;
+  position: relative;
   &__header {
     height: 130px;
     width: 100%;
-    line-height: 130px;
     border-bottom:1px solid gray;
     background-color: white;
     display: flex;
     justify-content: space-evenly;
     &__title {
+      line-height: 130px;
       font-size: 36px;
+      margin: auto;
+    }
+    &__input {
+      margin: auto;
+    }
+    &__background {
+      margin: auto;
+    }
+    &__analysis {
+      margin: auto;
+    }
+    &__blank {
+      margin: auto;
     }
   }
   &__main {
