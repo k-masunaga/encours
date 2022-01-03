@@ -25,6 +25,32 @@
             .analysis-search-body__main__field__results__each__date
               = spending.date.strftime("%-m月%-d日(#{@dw[spending.date.wday]})")
             .analysis-search-body__main__field__results__each__category
+              - if spending.spending_category.id == 1
+                = icon('fas', 'utensils')
+              - elsif spending.spending_category.id == 2
+                = icon('fas', 'wrench')
+              - elsif spending.spending_category.id == 3
+                = icon('fas', 'train')
+              - elsif spending.spending_category.id == 4
+                = icon('fas', 'mobile-alt')
+              - elsif spending.spending_category.id == 5
+                = icon('fas', 'cart-plus')
+              - elsif spending.spending_category.id == 6
+                = icon('fas', 'music')
+              - elsif spending.spending_category.id == 7
+                = icon('fas', 'graduation-cap')
+              - elsif spending.spending_category.id == 8
+                = icon('far', 'hospital')
+              - elsif spending.spending_category.id == 9
+                = icon('fas', 'bath')
+              - elsif spending.spending_category.id == 10
+                = icon('fas', 'car')
+              - elsif spending.spending_category.id == 11
+                = icon('fas', 'money-bill')
+              - elsif spending.spending_category.id == 12
+                = icon('fas', 'suitcase-rolling')
+              - elsif spending.spending_category.id == 13
+                = icon('fas', 'ellipsis-h')
               = spending.spending_category.name
             .analysis-search-body__main__field__results__each__price
               = number_to_currency(spending.price, unit: "￥", strip_insignificant_zeros: true)

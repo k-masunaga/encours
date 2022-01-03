@@ -25,12 +25,38 @@
           - @spendings.each do |spending|
             .history-body__main__field__spending__all__each
               .history-body__main__field__spending__all__each__edit
-                = link_to "編", edit_spending_path(spending.id), class: 'btn'
+                = link_to icon('far', 'edit'), edit_spending_path(spending.id), class: 'btn'
               .history-body__main__field__spending__all__each__destroy
-                = link_to "削", spending_path(spending.id), method: :delete, data: {confirm: "本当に削除しますか？"}, class: 'btn'
+                = link_to icon('far', 'trash-alt'), spending_path(spending.id), method: :delete, data: {confirm: "本当に削除しますか？"}, class: 'btn'
               .history-body__main__field__spending__all__each__date
                 = spending.date.strftime("%-m月%-d日(#{@dw[spending.date.wday]})")
               .history-body__main__field__spending__all__each__category
+                - if spending.spending_category.id == 1
+                  = icon('fas', 'utensils')
+                - elsif spending.spending_category.id == 2
+                  = icon('fas', 'wrench')
+                - elsif spending.spending_category.id == 3
+                  = icon('fas', 'train')
+                - elsif spending.spending_category.id == 4
+                  = icon('fas', 'mobile-alt')
+                - elsif spending.spending_category.id == 5
+                  = icon('fas', 'cart-plus')
+                - elsif spending.spending_category.id == 6
+                  = icon('fas', 'music')
+                - elsif spending.spending_category.id == 7
+                  = icon('fas', 'graduation-cap')
+                - elsif spending.spending_category.id == 8
+                  = icon('far', 'hospital')
+                - elsif spending.spending_category.id == 9
+                  = icon('fas', 'bath')
+                - elsif spending.spending_category.id == 10
+                  = icon('fas', 'car')
+                - elsif spending.spending_category.id == 11
+                  = icon('fas', 'money-bill')
+                - elsif spending.spending_category.id == 12
+                  = icon('fas', 'suitcase-rolling')
+                - elsif spending.spending_category.id == 13
+                  = icon('fas', 'ellipsis-h')
                 = spending.spending_category.name
               .history-body__main__field__spending__all__each__item-name
                 = spending.item_name
@@ -52,12 +78,24 @@
           - @incomes.each do |income|
             .history-body__main__field__income__all__each
               .history-body__main__field__income__all__each__edit
-                = link_to "編", edit_income_path(income.id), class: 'btn'
+                = link_to icon('far', 'edit'), edit_income_path(income.id), class: 'btn'
               .history-body__main__field__income__all__each__destroy
-                = link_to "削", income_path(income.id), method: :delete, data: {confirm: "本当に削除しますか？"}, class: 'btn'
+                = link_to icon('far', 'trash-alt'), income_path(income.id), method: :delete, data: {confirm: "本当に削除しますか？"}, class: 'btn'
               .history-body__main__field__income__all__each__date
                 = income.date.strftime("%-m月%-d日(#{@dw[income.date.wday]})")
               .history-body__main__field__income__all__each__category
+                - if income.income_category.id == 1
+                  = icon('fas', 'yen-sign')
+                - elsif income.income_category.id == 2
+                  = icon('fas', 'comments-dollar')
+                - elsif income.income_category.id == 3
+                  = icon('fas', 'trophy')
+                - elsif income.income_category.id == 4
+                  = icon('fas', 'hand-holding-usd')
+                - elsif income.income_category.id == 5
+                  = icon('fas', 'project-diagram')
+                - elsif income.income_category.id == 6
+                  = icon('fas', 'ellipsis-h')
                 = income.income_category.name
               .history-body__main__field__income__all__each__price
                 = number_to_currency(income.price, unit: "￥", strip_insignificant_zeros: true)
