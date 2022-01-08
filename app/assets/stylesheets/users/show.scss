@@ -66,6 +66,63 @@
           }
         }
       }
+      &__situation {
+        text-align: center;
+        font-size: 20px;
+        &__space {
+          &__data {
+            width: 80%;
+            margin: auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            border:1px solid gray;
+            &__income {
+              border-bottom:1px solid gray;
+              display: flex;
+              justify-content: space-between;
+              &__title {
+                margin-left: 20px;
+              }
+              &__sum {
+                width: 25%;
+                border-left:1px solid gray;
+                // margin: auto;
+              }
+            }
+            &__spending {
+              border-bottom:1px solid gray;
+              display: flex;
+              justify-content: space-between;
+              &__title {
+                margin-left: 20px;
+              }
+              &__sum {
+                width: 25%;
+                border-left:1px solid gray;
+                // margin: auto;
+              }
+            }
+            &__balance {
+              display: flex;
+              justify-content: space-between;
+              &__title {
+                margin-left: 20px;
+              }
+              &__sum {
+                width: 25%;
+                border-left:1px solid gray;
+                // margin: auto;
+              }
+            }
+          }
+          &__link {
+            font-size: 16px;
+            display: flex;
+            justify-content: space-evenly;
+          }
+        }
+      }
     }
     &__right {
       height: 100%;

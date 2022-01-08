@@ -106,8 +106,6 @@
       .history-body__main__total__field
         .history-body__main__total__field__title
           集計結果
-        -# .history-body__main__total__field__term
-        -#   30日間
         .history-body__main__total__field__income
           .history-body__main__total__field__income__title
             収入の合計
@@ -120,7 +118,7 @@
             = number_to_currency(@spendings.sum("price"), unit: "￥", strip_insignificant_zeros: true)
         .history-body__main__total__field__balance
           .history-body__main__total__field__balance__title
-            総額
+            差額
           .history-body__main__total__field__balance__sum
             = number_to_currency(@incomes.sum("price") - @spendings.sum("price"), unit: "￥", strip_insignificant_zeros: true)
   .history-body__footer
