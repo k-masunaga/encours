@@ -1,5 +1,4 @@
 .test {
-  height: 80%;
-  width: 90%;
+  @include area(80%, 90%);
   margin: auto;
 }

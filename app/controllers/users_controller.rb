@@ -9,8 +9,8 @@ class UsersController < ApplicationController
     @month = params[:month] ? Date.parse(params[:month]) : Time.zone.today
     @this_year = @month.year
     @this_month = @month.month
-    @sdg_orders = Spending.where(date: @month.all_month)
-    @icm_orders = Income.where(date: @month.all_month)
+    @sdg_orders = Spending.where(date: @month.all_month, user_id: current_user.id)
+    @icm_orders = Income.where(date: @month.all_month, user_id: current_user.id)
 
     @ratio = @sdg_orders.joins(:spending_category).group("name").sum(:price).sort_by { |_, v| v }.reverse.to_h
 
@@ -21,6 +21,10 @@ class UsersController < ApplicationController
     @samples.sort!{ |spendings, incomes| incomes.created_at <=> spendings.created_at }
 
     @dw = ["日", "月", "火", "水", "木", "金", "土"]
+
+    @input_count = @samples.count
+    @sdg_count = spendings.count
+    @icm_count = incomes.count
 
   end
 

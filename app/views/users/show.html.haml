@@ -12,10 +12,16 @@
         .user-body__main__center__picture__data
           .user-body__main__center__picture__times
             記録回数
+            .user-body__main__center__picture__times__num
+              = "#{@input_count}"+ "回"
           .user-body__main__center__picture__days
-            記録日数
+            うち収入分
+            .user-body__main__center__picture__days__num
+              = "#{@icm_count}"+ "回"
           .user-body__main__center__picture__serial
-            連続記録
+            うち支出分
+            .user-body__main__center__picture__serial__num
+              = "#{@sdg_count}"+ "回"
       .user-body__main__center__situation
         = "#{@this_year}" + "年" + "#{@this_month}" + "月の支出内訳"
         .user-body__main__center__situation__space

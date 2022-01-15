@@ -1,14 +1,39 @@
+@mixin area($height: 100%, $width: 100%){
+  height: $height;
+  width: $width;
+}
+
+@mixin display-flex($display: flex, $justify-content: space-evenly){
+  display: $display;
+  justify-content: $justify-content;
+}
+
+@mixin line-height($height: 50px, $line-height: 50px){
+  height: $height;
+  line-height: $line-height;
+}
+
+@mixin history-border($border-right:1px solid gray, $border-bottom:1px solid gray){
+  border-right: $border-right;
+  border-bottom: $border-bottom;
+}
+
+@mixin sticky ($position: sticky, $top: 0px, $z-index: 100, $text-align: center, $background-color: whitesmoke){
+  position: $position;
+  top: $top;
+  z-index: $z-index;
+  text-align: $text-align;
+  background-color: $background-color;
+}
+
 .user-body {
-  height: 100%;
-  width: 100%;
+  @include area();
   position: relative;
   &__header {
-    height: 130px;
-    width: 100%;
+    @include area(130px);
+    @include display-flex();
     border-bottom:1px solid gray;
     background-color: white;
-    display: flex;
-    justify-content: space-evenly;
     &__title {
       line-height: 130px;
       font-size: 36px;
@@ -28,21 +53,16 @@
     }
   }
   &__main {
-    height: 750px;
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
+    @include area(750px);
+    @include display-flex();
     &__left {
-      height: 100%;
-      width: 20%;
+      @include area(100%, 20%);
       border-right: 1px solid gray;
     }
     &__center {
-      height: 100%;
-      width: 55%;
+      @include area(100%, 55%);
       &__picture {
-        height: 200px;
-        width: 100%;
+        @include area(200px, 100%);
         position: relative;
         &__mypage {
           top: 20px;
@@ -51,19 +71,12 @@
           position: absolute;
         }
         &__data {
+          @include display-flex(flex, space-around);
           height: 60px;
           width: 300px;
           right: 50px;
           bottom: 50px;
           position: absolute;
-          display: flex;
-          justify-content: space-around;
-          &__times {
-          }
-          &__days {
-          }
-          &__serial {
-          }
         }
       }
       &__situation {
@@ -78,9 +91,8 @@
             font-size: 16px;
             border:double 3px gray;
             &__income {
+              @include display-flex(flex, space-between);
               border-bottom:double 3px gray;
-              display: flex;
-              justify-content: space-between;
               &__title {
                 margin-left: 20px;
               }
@@ -90,9 +102,8 @@
               }
             }
             &__spending {
+              @include display-flex(flex, space-between);
               border-bottom:double 3px gray;
-              display: flex;
-              justify-content: space-between;
               &__title {
                 margin-left: 20px;
               }
@@ -102,8 +113,7 @@
               }
             }
             &__balance {
-              display: flex;
-              justify-content: space-between;
+              @include display-flex(flex, space-between);
               &__title {
                 margin-left: 20px;
               }
@@ -114,34 +124,25 @@
             }
           }
           &__link {
+            @include display-flex();
             font-size: 16px;
-            display: flex;
-            justify-content: space-evenly;
           }
         }
       }
     }
     &__right {
-      height: 100%;
-      width: 25%;
+      @include area(100%, 25%);
       border-left: 1px solid gray;
-      &__input {
-        height: 300px;
-        width: 100%;
-      }
       &__recent {
-        height: 300px;
-        width: 100%;
+        @include area(300px, 100%);
       }
     }
   }
   &__footer {
-    height: 130px;
-    width: 100%;
+    @include area(130px, 100%);
     line-height: 130px;
     border-top: 1px solid gray;
     text-align: center;
-    background-color: white;
   }
 }
 .a {
