@@ -2,7 +2,6 @@
   .analysis-body__header
     = render "users/header"
   .analysis-body__main
-    .analysis-body__main__blank
     .analysis-body__main__search
       = render "analyses/search-zone"
     .analysis-body__main__field
@@ -18,30 +17,6 @@
         .analysis-body__main__field__title__memo
           メモ
       .analysis-body__main__field__results
-        - @total.each do |total|
-          .analysis-body__main__field__results__each
-            -# - if total.class == Spending
-            -#   .analysis-body__main__field__results__each__sdg
-            -#     .analysis-body__main__field__results__each__sdg__date
-            -#       = total.date.strftime("%-m月%-d日(#{@dw[total.date.wday]})")
-            -#     .analysis-body__main__field__results__each__sdg__category
-            -#       = total.spending_category.name
-            -#     .analysis-body__main__field__results__each__sdg__price
-            -#       = number_to_currency(total.price, unit: "￥", strip_insignificant_zeros: true)
-            -#     .analysis-body__main__field__results__each__sdg__item-name
-            -#       = total.item_name
-            -#     .analysis-body__main__field__results__each__sdg__memo
-            -#       = total.memo
-            -# - else
-            -#   .analysis-body__main__field__results__each__icm
-            -#     .analysis-body__main__field__results__each__icm__date
-            -#       = total.date.strftime("%-m月%-d日(#{@dw[total.date.wday]})")
-            -#     .analysis-body__main__field__results__each__icm__category
-            -#       = total.income_category.name
-            -#     .analysis-body__main__field__results__each__icm__price
-            -#       = number_to_currency(total.price, unit: "￥", strip_insignificant_zeros: true)
-            -#     .analysis-body__main__field__results__each__icm__item-name
-            -#     .analysis-body__main__field__results__each__icm__memo
-            -#       = total.memo
+        .analysis-body__main__field__results__each
   .analysis-body__footer
     = render "users/footer"
