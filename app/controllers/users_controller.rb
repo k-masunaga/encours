@@ -14,6 +14,14 @@ class UsersController < ApplicationController
 
     @ratio = @sdg_orders.joins(:spending_category).group("name").sum(:price).sort_by { |_, v| v }.reverse.to_h
 
+    spendings = Spending.joins(:spending_category).all.where(user_id: current_user.id)
+    incomes = Income.joins(:income_category).all.where(user_id: current_user.id)
+
+    @samples = spendings | incomes
+    @samples.sort!{ |spendings, incomes| incomes.created_at <=> spendings.created_at }
+
+    @dw = ["日", "月", "火", "水", "木", "金", "土"]
+
   end
 
   def delete

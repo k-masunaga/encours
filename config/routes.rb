@@ -8,7 +8,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :inputs, only: [:show, :get]
+  resources :inputs, only: [:show, :get] do
+    collection do
+      get 'calendar'
+    end
+  end
 
   resources :spendings, only: [:new, :create, :edit, :update, :destroy]
 

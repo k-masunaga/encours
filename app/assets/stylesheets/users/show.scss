@@ -1,7 +1,6 @@
 .user-body {
   height: 100%;
   width: 100%;
-  background-color: antiquewhite;
   position: relative;
   &__header {
     height: 130px;
@@ -29,13 +28,14 @@
     }
   }
   &__main {
-    height: 1000px;
+    height: 750px;
     width: 100%;
     display: flex;
     justify-content: space-evenly;
     &__left {
       height: 100%;
       width: 20%;
+      border-right: 1px solid gray;
     }
     &__center {
       height: 100%;
@@ -127,6 +127,7 @@
     &__right {
       height: 100%;
       width: 25%;
+      border-left: 1px solid gray;
       &__input {
         height: 300px;
         width: 100%;
