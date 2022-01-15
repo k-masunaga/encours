@@ -2,16 +2,16 @@
   .user-body__header__title
     = link_to "Encours app", user_path(current_user.id), method: :get, class: 'a'
   .user-body__header__input
-    = link_to icon('fas', 'pen fa-3x'), input_path(current_user.id), method: :get, class: 'btn'
+    = link_to icon('fas', 'pen fa-2x'), input_path(current_user.id), method: :get, class: 'btn'
     .user-body__header__input__message
-      = link_to '入力する', input_path(current_user.id), method: :get, class: 'btn'
+      = link_to '入力', input_path(current_user.id), method: :get, class: 'btn'
   .user-body__header__background
-    = link_to icon('fas', 'history fa-3x'), history_path(current_user.id), method: :get, class: 'btn'
+    = link_to icon('fas', 'history fa-2x'), history_path(current_user.id), method: :get, class: 'btn'
     .user-body__header__background__message
       = link_to '履歴', history_path(current_user.id), method: :get, class: 'btn'
   .user-body__header__analysis
-    = link_to icon('fas', 'search-plus fa-3x'), analysis_path(current_user.id), method: :get, class: 'btn'
+    = link_to icon('fas', 'search-plus fa-2x'), analysis_path(current_user.id), method: :get, class: 'btn'
     .user-body__header__analysis__message
-      = link_to '分析する', analysis_path(current_user.id), method: :get, class: 'btn'
+      = link_to '分析', analysis_path(current_user.id), method: :get, class: 'btn'
   .user-body__header__blank
     = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'

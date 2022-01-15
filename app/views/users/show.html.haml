@@ -16,12 +16,53 @@
             記録日数
           .user-body__main__center__picture__serial
             連続記録
-      .user-body__main__situation
-        今月の状況
+      .user-body__main__center__situation
+        = "#{@this_year}" + "年" + "#{@this_month}" + "月の支出内訳"
+        .user-body__main__center__situation__space
+          .user-body__main__center__situation__space__pie
+            = pie_chart @ratio, donut: true, suffix: "円"
+          .user-body__main__center__situation__space__data
+            .user-body__main__center__situation__space__data__income
+              .user-body__main__center__situation__space__data__income__title
+                当月の総収入
+              .user-body__main__center__situation__space__data__income__sum
+                = number_to_currency(@icm_orders.sum("price"), unit: "￥", strip_insignificant_zeros: true)
+            .user-body__main__center__situation__space__data__spending
+              .user-body__main__center__situation__space__data__spending__title
+                当月の総支出
+              .user-body__main__center__situation__space__data__spending__sum
+                = number_to_currency(@sdg_orders.sum("price"), unit: "￥", strip_insignificant_zeros: true)
+            .user-body__main__center__situation__space__data__balance
+              .user-body__main__center__situation__space__data__balance__title
+                差額
+              .user-body__main__center__situation__space__data__balance__sum
+                = number_to_currency(@icm_orders.sum("price") - @sdg_orders.sum("price"), unit: "￥", strip_insignificant_zeros: true)
+          .user-body__main__center__situation__space__link
+            .user-body__main__center__situation__space__link__prev
+              = link_to "前の月へ", user_path(current_user.id, month:@month.prev_month)
+            .user-body__main__center__situation__space__link__next
+              = link_to "次の月へ", user_path(current_user.id, month:@month.next_month)
     .user-body__main__right
-      .user-body__main__right__input
-        かんたん入力
       .user-body__main__recent
         最近の入力
+      .user-body__main__recent__all
+        - @samples.first(7).each do |sample|
+          .input-body__main__right__recent__all__each
+            - if sample.class == Spending
+              .input-body__main__right__recent__all__each__sdg
+                .input-body__main__right__recent__all__each__sdg__date
+                  = sample.date.strftime("%-m月%-d日(#{@dw[sample.date.wday]})")
+                .input-body__main__right__recent__all__each__sdg__category
+                  = sample.spending_category.name
+                .input-body__main__right__recent__all__each__sdg__price
+                  = number_to_currency(sample.price, unit: "￥", strip_insignificant_zeros: true)
+            - else
+              .input-body__main__right__recent__all__each__icm
+                .input-body__main__right__recent__all__each__icm__date
+                  = sample.date.strftime("%-m月%-d日(#{@dw[sample.date.wday]})")
+                .input-body__main__right__recent__all__each__icm__category
+                  = sample.income_category.name
+                .input-body__main__right__recent__all__each__icm__price
+                  = number_to_currency(sample.price, unit: "￥", strip_insignificant_zeros: true)
   .user-body__footer
     Encours App

@@ -38,12 +38,14 @@
                 %br/
                 %p= f.submit '入力する'
     .input-body__main__right
-      .input-body__main__right__calender
-        カレンダー
+      .input-body__main__right__calendar
+        .input-body__main__right__calendar__space
+          = link_to icon('far', 'calendar-alt'), calendar_inputs_path, target: :_blank, rel: "noopener noreferrer"
+          = link_to "カレンダーを開く", calendar_inputs_path, target: :_blank, rel: "noopener noreferrer"
       .input-body__main__right__recent
         最近の入力
         .input-body__main__right__recent__all
-          - @samples.first(7).each do |sample|
+          - @samples.first(5).each do |sample|
             .input-body__main__right__recent__all__each
               - if sample.class == Spending
                 .input-body__main__right__recent__all__each__sdg

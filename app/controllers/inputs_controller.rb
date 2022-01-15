@@ -8,4 +8,7 @@ class InputsController < ApplicationController
 
     @dw = ["日", "月", "火", "水", "木", "金", "土"]
   end
+
+  def calendar
+  end
 end

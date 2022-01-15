@@ -63,6 +63,7 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (~> 1.5)
       xpath (~> 3.2)
+    chartkick (3.4.2)
     childprocess (3.0.0)
     chromedriver-helper (2.1.1)
       archive-zip (~> 0.10)
@@ -91,6 +92,8 @@ GEM
       sassc (>= 1.11)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    groupdate (5.2.4)
+      activesupport (>= 5)
     haml (5.2.0)
       temple (>= 0.8.0)
       tilt
@@ -205,6 +208,8 @@ GEM
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
     sexp_processor (4.15.1)
+    simple_calendar (2.4.3)
+      rails (>= 3.0)
     spring (2.1.1)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -248,10 +253,12 @@ DEPENDENCIES
   bootsnap (>= 1.1.0)
   byebug
   capybara (>= 2.15)
+  chartkick
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise
   font-awesome-sass (~> 5.4.1)
+  groupdate
   haml-rails
   jbuilder (~> 2.5)
   jquery-rails
@@ -263,6 +270,7 @@ DEPENDENCIES
   ransack
   sass-rails (~> 5.0)
   selenium-webdriver
+  simple_calendar (~> 2.0)
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
