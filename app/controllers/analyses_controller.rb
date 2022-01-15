@@ -4,11 +4,6 @@ class AnalysesController < ApplicationController
   end
 
   def show
-    spendings = Spending.joins(:spending_category).all.where(user_id: current_user.id)
-    incomes = Income.joins(:income_category).all.where(user_id: current_user.id)
-
-    @total = spendings | incomes
-    @total.sort!{ |spendings, incomes| incomes.date <=> spendings.date }
   end
 
   def search
