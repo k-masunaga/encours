@@ -6,7 +6,7 @@
     .analysis-body__main__search__field__category
       = f.label :spending_category_id, 'カテゴリー：'
       = f.collection_check_boxes :spending_category_id_in, @spending_category, :id, :name
-    .analysis-body__main__search__field__category
+    .analysis-body__main__search__field__price
       = f.label :price, '金額： '
       = f.search_field :price_gteq
       = f.label :price, '〜'

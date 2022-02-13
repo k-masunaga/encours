@@ -77,28 +77,33 @@
         &__all {
           &__each {
             &__sdg {
-              @include area(80px, 90%);
+              @include area(75px, 90%);
               padding: 10px;
               border-radius: 5px;
+              border: 1px solid gray;
               position: relative;
               margin: auto;
+              margin-top: 2px;
               background-color: #ffffdd;
               &__price {
                 position: absolute;
-                margin-right: 30px;
-                margin-bottom: 30px;
+                right: 30px;
+                bottom: 20px;
               }
             }
             &__icm {
-              @include area(80px, 90%);
+              @include area(75px, 90%);
               padding: 10px;
               border-radius: 5px;
+              border: 1px solid gray;
+              position: relative;
               margin: auto;
+              margin-top: 2px;
               background-color: #ddffdd;
               &__price {
                 position: absolute;
-                margin-right: 30px;
-                margin-bottom: 30px;
+                right: 30px;
+                bottom: 20px;
               }
             }
           }

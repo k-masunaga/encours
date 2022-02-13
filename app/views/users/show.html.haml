@@ -59,6 +59,32 @@
                 .input-body__main__right__recent__all__each__sdg__date
                   = sample.date.strftime("%-m月%-d日(#{@dw[sample.date.wday]})")
                 .input-body__main__right__recent__all__each__sdg__category
+                  - if sample.spending_category.id == 1
+                    = icon('fas', 'utensils')
+                  - elsif sample.spending_category.id == 2
+                    = icon('fas', 'wrench')
+                  - elsif sample.spending_category.id == 3
+                    = icon('fas', 'train')
+                  - elsif sample.spending_category.id == 4
+                    = icon('fas', 'mobile-alt')
+                  - elsif sample.spending_category.id == 5
+                    = icon('fas', 'cart-plus')
+                  - elsif sample.spending_category.id == 6
+                    = icon('fas', 'music')
+                  - elsif sample.spending_category.id == 7
+                    = icon('fas', 'graduation-cap')
+                  - elsif sample.spending_category.id == 8
+                    = icon('far', 'hospital')
+                  - elsif sample.spending_category.id == 9
+                    = icon('fas', 'bath')
+                  - elsif sample.spending_category.id == 10
+                    = icon('fas', 'car')
+                  - elsif sample.spending_category.id == 11
+                    = icon('fas', 'money-bill')
+                  - elsif sample.spending_category.id == 12
+                    = icon('fas', 'suitcase-rolling')
+                  - elsif sample.spending_category.id == 13
+                    = icon('fas', 'ellipsis-h')
                   = sample.spending_category.name
                 .input-body__main__right__recent__all__each__sdg__price
                   = number_to_currency(sample.price, unit: "￥", strip_insignificant_zeros: true)
@@ -67,6 +93,18 @@
                 .input-body__main__right__recent__all__each__icm__date
                   = sample.date.strftime("%-m月%-d日(#{@dw[sample.date.wday]})")
                 .input-body__main__right__recent__all__each__icm__category
+                  - if sample.income_category.id == 1
+                    = icon('fas', 'yen-sign')
+                  - elsif sample.income_category.id == 2
+                    = icon('fas', 'comments-dollar')
+                  - elsif sample.income_category.id == 3
+                    = icon('fas', 'trophy')
+                  - elsif sample.income_category.id == 4
+                    = icon('fas', 'hand-holding-usd')
+                  - elsif sample.income_category.id == 5
+                    = icon('fas', 'project-diagram')
+                  - elsif sample.income_category.id == 6
+                    = icon('fas', 'ellipsis-h')
                   = sample.income_category.name
                 .input-body__main__right__recent__all__each__icm__price
                   = number_to_currency(sample.price, unit: "￥", strip_insignificant_zeros: true)

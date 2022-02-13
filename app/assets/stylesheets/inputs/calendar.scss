@@ -1,4 +1,11 @@
 .test {
-  @include area(80%, 90%);
+  @include area(70%, 80%);
   margin: auto;
 }
+
+.wday-0 {
+  color: red;
+}
+.wday-6 {
+   color: blue;
+} 
