@@ -6,10 +6,24 @@
       height: 200px;
       &__field {
         height: 150px;
-        padding-top: 30px;
-        padding-left: 50px;
-        align-items: center;
+        padding-top: 25px;
+        padding-left: 100px;
         border-bottom:1px solid gray;
+        &__category2 {
+          @include display-flex(flex, left);
+          &__fake {
+            color: white;
+            margin-right: 5px;
+          }
+        }
+        &__zone {
+          @include display-flex(flex, space-between);
+          width: 60%
+        }
+        &__submit {
+          text-align: right;
+          width: 75%;
+        }
       }
     }
     &__field {
@@ -53,6 +67,6 @@
     }
   }
 }
-.check-box {
-  padding-right: 5px;
+label {
+  margin-right: 8px;
 }

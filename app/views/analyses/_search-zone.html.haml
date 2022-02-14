@@ -3,16 +3,22 @@
     .analysis-body__main__search__field__item_name
       = f.label :item_name, '品目名：'
       = f.search_field :item_name_cont
-    .analysis-body__main__search__field__category
+    .analysis-body__main__search__field__category1
       = f.label :spending_category_id, 'カテゴリー：'
-      = f.collection_check_boxes :spending_category_id_in, @spending_category, :id, :name
-    .analysis-body__main__search__field__price
-      = f.label :price, '金額： '
-      = f.search_field :price_gteq
-      = f.label :price, '〜'
-      = f.search_field :price_lteq
-    .analysis-body__main__search__field__memo
-      = f.label :memo, 'メモ：'
-      = f.search_field :memo_cont
+      = f.collection_check_boxes :spending_category_id_in, @spending_category.first(7), :id, :name
+    .analysis-body__main__search__field__category2
+      .analysis-body__main__search__field__category2__fake
+        = f.label :spending_category_id, '＿＿＿＿＿＿'
+      .analysis-body__main__search__field__category2__form
+        = f.collection_check_boxes :spending_category_id_in, @spending_category.last(6), :id, :name
+    .analysis-body__main__search__field__zone
+      .analysis-body__main__search__field__zone__price
+        = f.label :price, '金額：'
+        = f.search_field :price_gteq
+        = f.label :price, '〜'
+        = f.search_field :price_lteq
+      .analysis-body__main__search__field__zone__memo
+        = f.label :memo, 'メモ：'
+        = f.search_field :memo_cont
     .analysis-body__main__search__field__submit
       = f.submit '絞り込み検索'
