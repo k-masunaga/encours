@@ -4,8 +4,15 @@ class IncomesController < ApplicationController
   end
 
   def create
-    Income.create(post_params)
-    redirect_to input_path(current_user.id)
+    # Income.create(post_params)
+    # redirect_to input_path(current_user.id)
+    @input = Income.create(post_params)
+    if @input.save
+      redirect_to input_path(current_user.id), notice: '入力が完了しました'
+    else
+      redirect_to input_path(current_user.id)
+      flash[:alert] = '入力未完了です。入力抜け、もしくはデータ形式が正しくない箇所があります。'
+    end
   end
 
   def edit

@@ -2,6 +2,7 @@ class InputsController < ApplicationController
   before_action :set_beginning_of_week, only: [:show, :calendar]
 
   def show
+
     spendings = Spending.joins(:spending_category).all.where(user_id: current_user.id)
     incomes = Income.joins(:income_category).all.where(user_id: current_user.id)
 
