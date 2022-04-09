@@ -58,6 +58,12 @@
     &__left {
       @include area(100%, 20%);
       border-right: 1px solid gray;
+      &__info {
+        &__each {
+          font-size: 14px;
+          margin: 5px;
+        }
+      }
     }
     &__center {
       @include area(100%, 55%);

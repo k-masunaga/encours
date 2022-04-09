@@ -14,8 +14,6 @@
               %ul 家計簿を入力
               %br/
               = form_with(model: @spending, url: spendings_path, class: :form, local: true) do |f|
-                -# %ul テスト
-                -# %ul= render "layouts/error_messages", model: f.object, local: true
                 = f.collection_select :spending_category_id, SpendingCategory.all, :id, :name,{prompt: "カテゴリの選択 ※必須"}
                 %br/
                 = f.text_field :item_name, placeholder: "品目名"
