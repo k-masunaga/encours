@@ -42,4 +42,18 @@
     // ---------------------------
     tabs[0].onclick();
   });
+
+  $(function(){
+    setTimeout("$('.notifications').fadeOut('slow')", 2000);
+  
+    $("#sample3 li").on({
+      'mouseenter':function(){
+        var text = $(this).attr('data-text');
+        $(this).append('<div class="sample3-tooltips">'+text+'</div>');
+      },
+      'mouseleave':function(){
+        $(this).find(".sample3-tooltips").remove();
+      }
+    });
+  });
 })(jQuery);
