@@ -3,7 +3,8 @@
   &__main {
     height: 720px;
     &__blank {
-      height: 50px;
+      @include line-height();
+      margin-left: 30px
     }
     &__select {
       @include display-flex();

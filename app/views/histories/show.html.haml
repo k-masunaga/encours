@@ -3,6 +3,8 @@
     = render "users/header"
   .history-body__main
     .history-body__main__blank
+      - breadcrumb :history
+      = breadcrumbs separator: " › "
     .history-body__main__select
       .history-body__main__select__spending
         支出

@@ -92,6 +92,9 @@ GEM
       sassc (>= 1.11)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    gretel (4.1.0)
+      actionview (>= 5.1, < 7.0)
+      railties (>= 5.1, < 7.0)
     groupdate (5.2.4)
       activesupport (>= 5)
     haml (5.2.2)
@@ -257,6 +260,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   font-awesome-sass (~> 5.4.1)
+  gretel
   groupdate
   haml-rails
   jbuilder (~> 2.5)

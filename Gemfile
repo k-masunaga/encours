@@ -70,3 +70,4 @@ gem 'font-awesome-sass', '~> 5.4.1'
 gem 'chartkick'
 gem 'groupdate'
 gem "simple_calendar", "~> 2.0"
+gem 'gretel'

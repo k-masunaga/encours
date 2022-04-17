@@ -1,11 +1,15 @@
 .income-body {
+  &__breadcrumb {
+    @include line-height();
+    margin-left: 30px
+  }
   &__title {
-    height: 50px;
+    @include line-height();
     width: 90%;
-    line-height: 50px;
     text-align: center;
     margin: auto;
     font-size: 20px;
+    border-top: 1px solid gray;
     border-left: 1px solid gray;
     border-right: 1px solid gray;
     background-color: #ddffdd;

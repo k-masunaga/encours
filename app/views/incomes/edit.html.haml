@@ -1,6 +1,9 @@
 .income-body
   .income-body__header
     = render "users/header"
+  .income-body__breadcrumb
+    - breadcrumb :income_edit, @income
+    = breadcrumbs separator: " › "
   .income-body__title
     収入の編集
   .income-body__main

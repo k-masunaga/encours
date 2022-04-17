@@ -6,7 +6,8 @@
     &__left {
       @include area(100%, 70%);
       &__blank {
-        height: 50px;
+        @include line-height();
+        margin-left: 30px;
       }
       &__switch {
         @include area(50px, 90%);

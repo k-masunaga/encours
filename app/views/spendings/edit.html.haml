@@ -1,6 +1,9 @@
 .spending-body
   .spending-body__header
     = render "users/header"
+  .spending-body__breadcrumb
+    - breadcrumb :spending_edit, @spending
+    = breadcrumbs separator: " › "
   .spending-body__title
     支出の編集
   .spending-body__main

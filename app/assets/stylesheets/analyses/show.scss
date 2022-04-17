@@ -4,6 +4,9 @@
     height: 300px;
     &__search {
       height: 200px;
+      &__breadcrumb {
+        margin-left: 30px;
+      }
       &__field {
         height: 150px;
         padding-top: 25px;
