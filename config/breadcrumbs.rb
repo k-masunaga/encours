@@ -23,8 +23,13 @@ crumb :income_edit do |income|
 end
 
 crumb :analysis do
-  link "検索", analysis_path(current_user.id)
+  link "分析", analysis_path(current_user.id)
   parent :root
+end
+
+crumb :spending_edit_from_analysis do |spending|
+  link "支出の編集", edit_spending_path(spending.id)
+  parent :analysis
 end
 
 # crumb :projects do

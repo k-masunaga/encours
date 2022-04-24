@@ -48,11 +48,11 @@
         }
         &__date {
           @include history-border();
-          width: 15%;
+          width: 25%;
         }
         &__category {
           @include history-border();
-          width: 30%;
+          width: 20%;
         }
         &__price {
           @include history-border();

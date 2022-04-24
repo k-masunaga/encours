@@ -14,21 +14,35 @@ class SpendingsController < ApplicationController
   end
 
   def edit
+    path = Rails.application.routes.recognize_path(request.referer)
     @spending = Spending.find(params[:id])
+    if path[:controller] == "histories"
+      @branch = 0
+    else
+      @branch = 1
+    end
   end
 
   def update
     spending = Spending.find(params[:id])
     spending.update(update_params)
-    redirect_to history_path(current_user.id)
+    if spending.update_attributes(update_params) == true
+      redirect_to history_path(current_user.id), notice: '編集が完了しました'
+    else
+      redirect_to history_path(current_user.id)
+      flash[:alert] = '編集に失敗しました。入力抜け、もしくはデータ形式が正しくない箇所があります。'
+    end
   end
 
   def destroy
     spending = Spending.find(params[:id])
     if spending.user_id == current_user.id
       spending.destroy
+      redirect_to history_path(current_user.id), notice: '削除が完了しました'
+    else
+      redirect_to history_path(current_user.id)
+      flash[:alert] = '削除に失敗しました。'
     end
-    redirect_to history_path(current_user.id)
   end
 
   private

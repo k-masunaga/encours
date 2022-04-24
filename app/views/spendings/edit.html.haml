@@ -2,8 +2,12 @@
   .spending-body__header
     = render "users/header"
   .spending-body__breadcrumb
-    - breadcrumb :spending_edit, @spending
-    = breadcrumbs separator: " › "
+    - if @branch == 0
+      - breadcrumb :spending_edit, @spending
+      = breadcrumbs separator: " › "
+    - else
+      - breadcrumb :spending_edit_from_analysis, @spending
+      = breadcrumbs separator: " › "
   .spending-body__title
     支出の編集
   .spending-body__main
@@ -18,3 +22,6 @@
       %br/
       %br/
       = f.submit '編集を完了する'
+    .spending-body__main__caution 
+      - if @branch == 1
+        ※編集完了の際に履歴ページに遷移します。

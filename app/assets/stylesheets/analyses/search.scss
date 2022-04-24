@@ -28,11 +28,11 @@
         }
         &__date {
           @include history-border();
-          width: 15%;
+          width: 25%;
         }
         &__category {
           @include history-border();
-          width: 30%;
+          width: 20%;
         }
         &__price {
           @include history-border();
@@ -53,14 +53,24 @@
           @include display-flex();
           text-align: center;
           border-bottom:1px solid gray;
+          &:hover {
+            background-color: skyblue;
+          }
+          &__edit {
+            margin-left: 5px;
+            margin-right: 5px;
+          }
+          &__destroy {
+            margin-right: 5px;
+          }
           &__date {
-            width: 15%;
+            width: 21%;
           }
           &__category {
-            width: 30%;
+            width: 20%;
           }
           &__price {
-            padding-right: 15px;
+            padding-right: 30px;
             text-align: right;
             width: 15%;
           }
@@ -73,5 +83,34 @@
         }
       }
     }
+  }
+}
+
+#sample3 li {
+  position: relative;
+
+  &:hover {
+    background: #deb3ba;
+  }
+}
+
+.sample3-tooltips {
+  font-size: 13px;
+  position: absolute;
+  width: 55px;
+  top: 15px;
+  left: 35px;
+  padding: 0.1em 0.5em;
+  color: blue;
+  background: white;
+  border:1px solid gray;
+  border-radius: 0.5em;
+
+  &:after {
+    width: 100%;
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0.5em;
   }
 }
